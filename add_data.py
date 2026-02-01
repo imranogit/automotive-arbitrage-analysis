@@ -29,12 +29,27 @@ if __name__ == "__main__":
     # List of 5 common German car parts with prices in Germany vs Dubai (UAE)
     # Format: (part_number, part_name, price_de_eur, price_uae_eur, url_de, url_uae)
     
+# MARKET DATA: Q1 2026 BENCHMARKS
+    # Strategy: Mixed (Import High Value / Export High Volume)
     car_parts = [
-        ("0986494166", "Bosch Brake Pad Set (W203)", 40.00, 27.50, "https://www.autodoc.de/bosch/1167796", "https://hndautomotiveparts.com/"),
-        ("1457433050", "Mahle Air Filter", 12.50, 32.00, "https://ebay.de/itm/mahle-air-filter", "https://amazon.ae/dp/mahle-filter-ae"),
-        ("1127300002", "Bosch Spark Plug Set", 28.75, 65.90, "https://ebay.de/itm/bosch-spark-plugs", "https://amazon.ae/dp/bosch-plugs-ae"),
-        ("1601687", "Sachs Clutch Kit", 89.99, 165.00, "https://ebay.de/itm/sachs-clutch-kit", "https://amazon.ae/dp/sachs-clutch-ae"),
-        ("0K2A816400", "Hyundai Engine Oil Filter", 8.50, 22.75, "https://ebay.de/itm/engine-oil-filter", "https://amazon.ae/dp/oil-filter-ae"),
+        # 1. PORSCHE HEADLIGHT (The "Gold Mine")
+        # Strategy: IMPORT (Dubai Scrap/Surplus -> Germany Used Market)
+        # Note: Prices compare OEM Used condition.
+        ("9586311", "Porsche Cayenne 958 Headlight (Right)", 620.00, 215.00, "https://ebay.de/itm/porsche-958", "https://betaautoparts.com/porsche"),
+
+        # 2. MERCEDES FUEL PUMP (The "Volume Runner")
+        # Strategy: IMPORT (Dubai Surplus -> Germany Retail)
+        # Compact size = Low shipping cost.
+        ("A2054701594", "Mercedes W205 Fuel Pump (Bosch)", 145.50, 75.00, "https://www.autodoc.de/bosch/1156484", "https://germanparts.ae/fuel-pump"),
+
+        # 3. SACHS CLUTCH KIT (The "Export Balance")
+        # Strategy: EXPORT (Germany Retail -> Dubai Workshop)
+        # German parts are premium priced in UAE workshops.
+        ("3000950019", "Sachs Clutch Kit (VW Golf 7)", 110.00, 185.00, "https://www.motointegrator.de/sachs", "https://partsmarket.ae/sachs-clutch"),
+        
+        # 4. MANN AIR FILTER (The "Container Filler")
+        # Strategy: EXPORT (Add to shipment to fill space)
+        ("C30005", "Mann Air Filter C 30 005", 14.50, 28.00, "https://www.autodoc.de/mann", "https://noon.com/mann-filter"),
     ]
     
     # Add all parts to the database using a loop
